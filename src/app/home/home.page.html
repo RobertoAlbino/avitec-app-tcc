@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Início
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <p>Olá! Percebemos que você não possui lote ativo no momento. Com isso, não temos informações para monitorar.</p>
+    <p>Seu aviário realmente está vazio?</p>
+    <p>Antes de começar a monitorar os dados você pode configurar a tabela de temperatura e umidade que será utilizada
+      para analisar os dados obtidos na granja. Para isso, toque no botão <b>TABELA DE TEMPERATURA E UMIDADE.</b></p>
+    <p>Para começar a monitorar as informações do seu aviário, toque no botão <b>INICIAR LOTE.</b></p>
+    <ion-button color="medium" expand="full" (click)="verTabela()">Tabela de temperatura e umidade</ion-button>
+    <ion-button color="primary" expand="full" (click)="iniciarLote()">Iniciar lote</ion-button>
+  </div>
+</ion-content>

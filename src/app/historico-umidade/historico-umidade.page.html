@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Históricos de umidade</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding text-center>
+  <div *ngIf="!hasError">
+    <ion-card [ngClass]="{'card-ok': ultimo.umidadeIdeal, 'card-danger': !ultimo.umidadeIdeal}">
+      <ion-card-header>
+        <ion-card-title>
+          Última umidade registrada
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <b class="display-variable-300">{{ultimo.umidade}}%</b>
+        <p>Registrada em: {{formatDate(ultimo.data)}}</p>
+      </ion-card-content>
+    </ion-card>
+    <ion-grid>
+      <ion-row *ngFor="let historico of historicos" [ngClass]="{'variable-ok': historico.umidadeIdeal, 'variable-danger': !historico.umidadeIdeal}">
+        <ion-col size="3">{{historico.umidade}}ºC</ion-col>
+        <ion-col size="8">{{formatDate(historico.data)}}</ion-col>
+        <ion-col size="1">
+          <ion-icon name="checkmark-circle" *ngIf="historico.umidadeIdeal"></ion-icon>
+          <ion-icon name="alert" *ngIf="!historico.umidadeIdeal"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="doRefresh()">
+        <ion-icon name="refresh"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

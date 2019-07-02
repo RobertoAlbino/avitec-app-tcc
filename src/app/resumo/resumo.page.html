@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Resumo do lote</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      Variação de temperatura ao longo do lote
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #temperaturaLineCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Variação de umidade ao longo do lote
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #umidadeLineCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <div padding>
+    <ion-button color="primary" expand="block" (click)="inicio()">Início</ion-button>
+  </div>
+</ion-content>

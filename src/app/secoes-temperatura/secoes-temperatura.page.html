@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Seções de temperatura</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card [ngClass]="{'card-ok': temperatura.temperaturaIdeal, 'card-danger': !temperatura.temperaturaIdeal}"
+    *ngFor="let temperatura of dados" (click)="verHistorico(temperatura.zona)">
+    <ion-card-header>
+      <ion-card-title>Seção {{temperatura.zona}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <b class="display-variable-200">{{temperatura.temperatura}}°C</b>
+          </ion-col>
+          <ion-col size="6"><b>{{dateUtils.formatDate(temperatura.data)}}</b></ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="doRefresh()">
+        <ion-icon name="refresh"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

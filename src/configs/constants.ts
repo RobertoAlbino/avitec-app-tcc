@@ -1,0 +1,1 @@
+export const API_ENDPOINT = 'https://avitec-api.herokuapp.com/api/';

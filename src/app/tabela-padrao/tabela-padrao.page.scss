@@ -1,0 +1,7 @@
+.table-row {
+    line-height: 35px;
+}
+
+.table-row:nth-child(even) {
+    background-color: var(--ion-color-medium-tint)
+}

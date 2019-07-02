@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">
+        Fechar
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Editando tabela</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form>
+    <ion-item>
+      <ion-label>Dia do lote</ion-label>
+      <ion-input type="number" [(ngModel)]="dia.dias" name="dias"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Temperatura mínima</ion-label>
+      <ion-input type="number" [(ngModel)]="dia.temperaturaMinima" name="temperaturaMinima"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Temperatura máxima</ion-label>
+      <ion-input type="number" [(ngModel)]="dia.temperaturaMaxima" name="temperaturaMaxima"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Umidade mínima</ion-label>
+      <ion-input type="number" [(ngModel)]="dia.umidadeMinima" name="umidadeMinima"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Umidade máxima</ion-label>
+      <ion-input type="number" [(ngModel)]="dia.umidadeMaxima" name="umidadeMaxima"></ion-input>
+    </ion-item>
+  </form>
+  <ion-button color="primary" expand="block" (click)="salvar()">Salvar</ion-button>
+</ion-content>
